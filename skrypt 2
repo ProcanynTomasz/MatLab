@@ -1,0 +1,22 @@
+f = @(x) sin(2*x) - cos(x);
+
+a= -10;
+b= 10;
+N= 1000;
+
+figure(1)
+x = linspace(a,b,N);
+y = f(x);
+
+plot(x,y,x,zeros(1,N));
+
+for i = 2 : lenght(x)
+    low = x(i-1);
+    high = x(i);
+    try
+    x0 = fzero(f, [low,high]);
+    x0
+    catch
+        % -- tu nic nie ma 
+    end
+end
